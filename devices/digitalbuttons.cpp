@@ -1,7 +1,5 @@
-//
-//
-//
-//
+#include <Arduino.h>
+
 void setup() {
   // put your setup code here, to run once:
  Serial.begin(9600);
@@ -16,12 +14,12 @@ void loop() {
   // put your main code here, to run repeatedly:
 
   Serial.println(F("BOTON 1"));
-  Serial.println(digitalRead(14));
+  Serial.println(digitalRead(34));
   Serial.println(F("BOTON 2"));
-  Serial.println(digitalRead(12));
+  Serial.println(digitalRead(35));
   Serial.println(F("BOTON 3"));
-  Serial.println(digitalRead(13));
+  Serial.println(digitalRead(32));
   Serial.println(F("BOTON 4"));
-  Serial.println(digitalRead(15));
+  Serial.println(digitalRead(33));
 
 }
