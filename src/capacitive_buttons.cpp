@@ -48,11 +48,11 @@ void buttons_read() {
         
         // it if *is* touched and *wasnt* touched before, alert!
         if ((currtouched & _BV(i)) && !(lasttouched & _BV(i)) ) {
-            Serial.print(i); Serial.println(" released ");
+            Serial.print(i); Serial.println(" touched");
         }
         // if it *was* touched and now *isnt*, alert!
         if (!(currtouched & _BV(i)) && (lasttouched & _BV(i)) ) {
-            Serial.print(i); Serial.println(" touched");
+            Serial.print(i); Serial.println(" released");
         }
 
    }
