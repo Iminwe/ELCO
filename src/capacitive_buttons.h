@@ -27,6 +27,6 @@ void buttons_setup();
 //------------------------------------------------------------------------
 // ACTION FUNCTIONS 
 //------------------------------------------------------------------------
-void buttons_read();
+void buttons_read(int *button_position);
 
 #endif /* _CAPACITIVE_BUTTONS_H_ */

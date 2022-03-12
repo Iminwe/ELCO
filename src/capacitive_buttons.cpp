@@ -38,17 +38,18 @@ void buttons_setup()
     Serial.println("MPR121_board2 found!");
 }
 
-void buttons_read() {
+void buttons_read(int *button_position) {
     // Get the currently touched pads
     currtouched = buttons_board2.touched() & 0x0FFF;
     currtouched <<= 12;  // Move buttons_board2 data left by 12 bits
     currtouched |= buttons_board1.touched() & 0x0FFF;  // put the buttons_board1 data in the lower 12 bits
   
-   for (uint8_t i=0; i<24; i++) {
+   for (int i=0; i<24; i++) {
         
         // it if *is* touched and *wasnt* touched before, alert!
         if ((currtouched & _BV(i)) && !(lasttouched & _BV(i)) ) {
             Serial.print(i); Serial.println(" touched");
+            *button_position = i;
         }
         // if it *was* touched and now *isnt*, alert!
         if (!(currtouched & _BV(i)) && (lasttouched & _BV(i)) ) {
