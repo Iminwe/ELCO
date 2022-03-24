@@ -1,5 +1,8 @@
 #include "dfplayer.h"
 
+//------------------------------------------------------------------------
+// ERROR HANDLE CLASS (REQUIRED)
+//------------------------------------------------------------------------
 class Mp3Notify
 {
 public:
@@ -45,19 +48,30 @@ public:
   }
 };
 
+//------------------------------------------------------------------------
+// OBJECTS
+//------------------------------------------------------------------------
+// Use a digital pin as a serial bus with the SoftwareSerial library
 SoftwareSerial secondarySerial(GPIO_DFPLAYER_RX, GPIO_DFPLAYER_TX); // RX, TX
 DFMiniMp3<SoftwareSerial, Mp3Notify> mp3(secondarySerial);
 
-void dfplayer_setup () {
+//------------------------------------------------------------------------
+// INITIALIZATION FUNCTIONS 
+//------------------------------------------------------------------------
+void dfplayer_setup() {
 
   Serial.println("initializing...");
-  mp3.begin();
-  mp3.setVolume(10);
+  mp3.begin();                               // Initialize DFplayer object
+  mp3.setVolume(10);                         // Set volume (from 0 to 30)
   Serial.println("starting...");
+
 }
 
-void dfplayer_play (int *button_position) {
+//------------------------------------------------------------------------
+// ACTION FUNCTIONS 
+//------------------------------------------------------------------------
+void dfplayer_play(int *button_position) {
 
-  mp3.playMp3FolderTrack(*button_position+1); // sd:/mp3/00XX.mp3 (XX=button_Position)
+  mp3.playMp3FolderTrack (*button_position+1); // sd:/mp3/00XX.mp3 (XX=button_Position)
 
 }

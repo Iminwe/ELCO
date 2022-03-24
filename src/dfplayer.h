@@ -1,4 +1,3 @@
-
 #ifndef _DFPLAYER_H_
 #define _DFPLAYER_H_
 
@@ -10,22 +9,20 @@
 //------------------------------------------------------------------------
 // LIBRARIES
 //------------------------------------------------------------------------
-
 #include <Arduino.h>
+#include <systemLib.h>
+
 #include <SoftwareSerial.h>
 #include <DFMiniMp3.h>
-
-#include <systemLib.h>
 
 //------------------------------------------------------------------------
 // INITIALIZATION FUNCTIONS 
 //------------------------------------------------------------------------
-void dfplayer_setup ();
+void dfplayer_setup();
 
 //------------------------------------------------------------------------
 // ACTION FUNCTIONS 
 //------------------------------------------------------------------------
-void dfplayer_play (int *button_position);
-
+void dfplayer_play(int *button_position);
 
 #endif /* _DFPLAYER_H_ */
