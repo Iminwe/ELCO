@@ -4,7 +4,9 @@
 
 #include "capacitive_buttons.h"
 #include "leds_ws2812.h"
+#include "dfplayer.h"
 
+// define global var ONCE
 int button_position = -1;
 
 void setup() {
@@ -13,6 +15,7 @@ void setup() {
   
   buttons_setup();    // Buttons initialization
   leds_setup ();      // Leds initialization
+  dfplayer_setup ();  // DFplayer initialization
 
 }
 
@@ -25,9 +28,12 @@ void loop() {
 
   // We have to turn on the led in the "button_position"
   leds_write (&button_position);
+  
+  // We have to pkay the audio in the "button_position"
+  dfplayer_play (&button_position);
 
   delay (1000); // delay of debug, TO DELETE WHEN CODE IS RUNNING!!
 
-  button_position = -1;
+  button_position = -1; // To switch off the LEDs 
   
 }
