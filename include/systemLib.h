@@ -25,8 +25,8 @@
 
 // Which pin on the Arduino is connected to the DFplayer?
 
-#define GPIO_DFPLAYER_RX 	    5       // Pin receiving info from DFplayer
-#define GPIO_DFPLAYER_TX  	    4 		// Pin transmiting info to DFplayer
+#define GPIO_DFPLAYER_RX        5       // Pin receiving info from DFplayer
+#define GPIO_DFPLAYER_TX        4       // Pin transmiting info to DFplayer
 
 //------------------------------------------------------------------------
 // GLOBAL VARIABLE DECLARATIONS
