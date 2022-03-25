@@ -36,11 +36,12 @@ void loop() {
   // and save the position of the button touched
   buttons_read(&button_position);
 
-  // Turn on the led in the "button_position"
-  leds_write(&button_position);
-
-  // Play the audio in the "button_position" of SD card
-  dfplayer_play(&button_position);
+  if (button_position < 19) {
+    // Turn on the led in the "button_position"
+    leds_write(&button_position);
+    // Play the audio in the "button_position" of SD card
+    dfplayer_play(&button_position);
+  }
 
   delay(1000); // delay to debug, TO DELETE WHEN CODE IS RUNNING!!
 
