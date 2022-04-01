@@ -26,15 +26,15 @@ uint32_t currtouched = 0;
 //------------------------------------------------------------------------
 void buttons_setup() {
 
-    // MPR121_board1 is tied to GND (default address)
-    if (!buttons_board1.begin(0x5A)) {
+    // MPR121_board1
+    if (!buttons_board1.begin(MPR121_ADDRESS1)) {
         Serial.println("MPR121_board1 not found");
         while (1);
     }
     Serial.println("MPR121_board1 found!");
 
-    // MPR121_board2 is tied to SDA
-    if (!buttons_board2.begin(0x5C)) {
+    // MPR121_board2
+    if (!buttons_board2.begin(MPR121_ADDRESS2)) {
         Serial.println("MPR121_board2 not found");
         while (1);
     }

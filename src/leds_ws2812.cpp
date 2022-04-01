@@ -27,7 +27,7 @@ void leds_write(int *button_position) {
   pixels.clear(); // Set all pixel colors to 'off'
 
   // Takes RGB brightness values: from 0,0,0 up to 255,255,255
-  pixels.setPixelColor(*button_position, pixels.Color(0, 150, 0));
+  pixels.setPixelColor(*button_position, pixels.Color(R_BRIGHTNESS, G_BRIGHTNESS, B_BRIGHTNESS));
   // Send the updated pixel colors to the hardware.
   pixels.show();
   // Pause before next pass through loop

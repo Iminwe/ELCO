@@ -62,7 +62,7 @@ void dfplayer_setup() {
 
   Serial.println("initializing...");
   mp3.begin();                               // Initialize DFplayer object
-  mp3.setVolume(10);                         // Set volume (from 0 to 30)
+  mp3.setVolume(VOLUME);                     // Set volume (from 0 to 30)
   Serial.println("starting...");
 
 }
