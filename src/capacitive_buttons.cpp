@@ -45,7 +45,7 @@ void buttons_setup() {
 // ACTION FUNCTIONS 
 //------------------------------------------------------------------------
 void buttons_read(int *button_position) {
-    
+
     currtouched = buttons_board2.touched() & 0x0FFF;   // Get the currently touched pads
     currtouched <<= 12;                                // Move buttons_board2 data left by 12 bits
     currtouched |= buttons_board1.touched() & 0x0FFF;  // Put the buttons_board1 data in the lower 12 bits
@@ -65,5 +65,5 @@ void buttons_read(int *button_position) {
 
     // reset our state
     lasttouched = currtouched;
-
+    
 }

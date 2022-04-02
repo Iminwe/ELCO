@@ -1,17 +1,10 @@
-#ifndef _DFPLAYER_H_
-#define _DFPLAYER_H_
+#ifndef _GAME_H_
+#define _GAME_H_
 
 //------------------------------------------------------------------------
 // CLARIFICATIONS
 //------------------------------------------------------------------------
-// Code expects the SD card to contain the mp3 files in the path below:
-// sd:/mp3/00XX.mp3
-//
-// Examples:
-// sd:/mp3/0001.mp3
-// sd:/mp3/0002.mp3
 
-// Volume can have values from 0 to 30
 
 //------------------------------------------------------------------------
 // LIBRARIES
@@ -19,17 +12,21 @@
 #include <Arduino.h>
 #include <systemLib.h>
 
-#include <SoftwareSerial.h>
-#include <DFMiniMp3.h>
+#include "leds_ws2812.h"            // Header file to use the leds
+#include "dfplayer.h"               // Header file to use the DFplayer
 
 //------------------------------------------------------------------------
 // INITIALIZATION FUNCTIONS 
 //------------------------------------------------------------------------
-void dfplayer_setup();
+
 
 //------------------------------------------------------------------------
 // ACTION FUNCTIONS 
 //------------------------------------------------------------------------
-void dfplayer_play(int *audio_folder, int *button_position);
+void game_play(int *currentState);
+void game_MODE1();
+void game_MODE2();
+void game_MODE3();
+void game_MODE4();
 
-#endif /* _DFPLAYER_H_ */
+#endif /* _GAME_H_ */

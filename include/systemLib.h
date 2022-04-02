@@ -17,7 +17,6 @@
 //------------------------------------------------------------------------
 // LEDS
 //------------------------------------------------------------------------
-
 // Which pin on the Arduino is connected to the NeoPixels?
 #define GPIO_LEDS               15
 
@@ -35,18 +34,39 @@
 //------------------------------------------------------------------------
 // DFplayer
 //------------------------------------------------------------------------
-
 // Which pin on the Arduino is connected to the DFplayer?
-
 #define GPIO_DFPLAYER_RX        5       // Pin receiving info from DFplayer
 #define GPIO_DFPLAYER_TX        4       // Pin transmiting info to DFplayer
 
 #define VOLUME                  10
 
+enum sd_folder {
+    no_folder,
+	folder_MODE1,
+	folder_MODE2,
+	folder_MODE3,
+	folder_MODE4};
+
+//------------------------------------------------------------------------
+// FINITE STATE MACHINE
+//------------------------------------------------------------------------
+// Both states and transitions are identified by an 8-bit integer (0 to 255)
+#define STATES_NUMBER           4
+#define TRANSITION_NUMBER       4
+
+enum fsm_state {
+	MODE1,
+	MODE2,
+	MODE3,
+	MODE4};
+
 //------------------------------------------------------------------------
 // GLOBAL VARIABLE DECLARATIONS
 //------------------------------------------------------------------------
-// declare global var
+// Declare global var
 extern int button_position;
+extern int audio_folder;
+extern int button_mode;
+extern int currentState;
 
 #endif /* SYSTEMLIB_H_ */
