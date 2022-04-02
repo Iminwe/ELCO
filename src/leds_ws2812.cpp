@@ -34,3 +34,12 @@ void leds_write(int *button_position) {
   delay(LEDS_DELAY); 
 
 }
+
+void leds_clear() {
+
+  pixels.clear(); // Set all pixel colors to 'off'
+
+  // Send the updated pixel colors to the hardware.
+  pixels.show();
+
+}

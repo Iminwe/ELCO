@@ -41,11 +41,17 @@
 #define VOLUME                  10
 
 enum sd_folder {
-    no_folder,
-	folder_MODE1,
-	folder_MODE2,
-	folder_MODE3,
-	folder_MODE4};
+    NO_FOLDER,
+	FOLDER_MODE1,
+	FOLDER_MODE2,
+	FOLDER_MODE3,
+	FOLDER_MODE4,
+    FOLDER_SOUNDS};
+
+enum control_sounds{
+    NO_SOUND,
+    RIGHT_SOUND,
+    WRONG_SOUND};
 
 //------------------------------------------------------------------------
 // FINITE STATE MACHINE
@@ -61,12 +67,20 @@ enum fsm_state {
 	MODE4};
 
 //------------------------------------------------------------------------
+// GAME
+//------------------------------------------------------------------------
+#define GAME_MODE3_TIMER        10000
+
+//------------------------------------------------------------------------
 // GLOBAL VARIABLE DECLARATIONS
 //------------------------------------------------------------------------
 // Declare global var
 extern int button_position;
 extern int audio_folder;
+extern int audio_position;
 extern int button_mode;
 extern int currentState;
+
+
 
 #endif /* SYSTEMLIB_H_ */

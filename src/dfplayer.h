@@ -30,6 +30,6 @@ void dfplayer_setup();
 //------------------------------------------------------------------------
 // ACTION FUNCTIONS 
 //------------------------------------------------------------------------
-void dfplayer_play(int *audio_folder, int *button_position);
+void dfplayer_play(int *audio_folder, int *audio_position);
 
 #endif /* _DFPLAYER_H_ */

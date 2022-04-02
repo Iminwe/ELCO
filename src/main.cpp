@@ -17,6 +17,7 @@
 // define global var ONCE
 int button_position = -1;
 int audio_folder = 0;
+int audio_position = -1;
 int button_mode = 0;
 int currentState = -1;
 

@@ -69,9 +69,9 @@ void dfplayer_setup() {
 //------------------------------------------------------------------------
 // ACTION FUNCTIONS 
 //------------------------------------------------------------------------
-void dfplayer_play(int *audio_folder, int *button_position) {
+void dfplayer_play(int *audio_folder, int *audio_position) {
 
   // sd:/audio_folder/00XX.mp3 (XX=button_Position)
-  mp3.playFolderTrack16 (*audio_folder,*button_position+1);
+  mp3.playFolderTrack16 (*audio_folder,*audio_position);
   
 }
