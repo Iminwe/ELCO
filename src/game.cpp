@@ -26,7 +26,11 @@ unsigned int timer_MODE4 = 0;
 // Mode 4
 int random_Color;
 int random_Position;
-int leds_array [COLOURS_NUMBER];
+int leds_array   [COLOURS_NUMBER];
+//                                     Red     Green    Blue    Yellow
+int red_array    [COLOURS_NUMBER] = {  150,        0,      0,      150};
+int green_array  [COLOURS_NUMBER] = {    0,      150,      0,      150};
+int blue_array   [COLOURS_NUMBER] = {    0,        0,    150,        0};
 
 //------------------------------------------------------------------------
 // ACTION FUNCTIONS 
@@ -76,7 +80,7 @@ void game_MODE1() {
         // Turn on the led in the "button_position"
         leds_write(&button_position, &r_color, &g_color, &b_color);
         // Delay to let audio finish playing
-        delay (GAME_MODE1_DELAY_FINISHAUDIO);
+        delay (GAME_DELAY_FINISHAUDIO);
     }
     
 }
@@ -95,7 +99,7 @@ void game_MODE2() {
         // Turn on the led in the "button_position"
         leds_write(&button_position, &r_color, &g_color, &b_color);
         // Delay to let audio finish playing
-        delay (GAME_MODE2_DELAY_FINISHAUDIO);
+        delay (GAME_DELAY_FINISHAUDIO);
     }
     
 }
@@ -181,22 +185,19 @@ void game_MODE4() {
             // It is introduced to the array
             leds_array [i] = random_Position;
         }
-        //                                    Red     Green    Blue    Yellow
-        int leds_red    [COLOURS_NUMBER] = {  150,        0,      0,      150};
-        int leds_green  [COLOURS_NUMBER] = {    0,      150,      0,      150};
-        int leds_blue   [COLOURS_NUMBER] = {    0,        0,    150,        0};
 
         // LEDs turn off
         leds_clear();
         // The buttons light up in the colours you have defined
         for (size_t i = 0; i < COLOURS_NUMBER; i++) {
-            leds_write(&leds_array[i], &leds_red[i], &leds_green[i], &leds_blue[i]);
+            leds_write(&leds_array[i], &red_array[i], &green_array[i], &blue_array[i]);
         }
 
         // Play the audio in the "audio_position" of SD card
         dfplayer_play(&audio_folder,&audio_position);
         // Set the control variable
         hasPlayed_MODE4 = true;
+        
         // Store the current time
         timer_MODE4 = millis();
 
@@ -213,7 +214,6 @@ void game_MODE4() {
                 hasPlayed_MODE4 = false;
                 // LEDs turn off
                 leds_clear();
-                //leds_array [COLOURS_NUMBER]= {};
             // If another button is pressed
             } else {
                 if (!(button_position==-1)&&(button_position<LEDS_NUMPIXELS)) {
@@ -229,7 +229,6 @@ void game_MODE4() {
             hasPlayed_MODE4 = false;
             // LEDs turn off
             leds_clear();
-            //leds_array [COLOURS_NUMBER]= {};
         }
     }
 }

@@ -55,6 +55,9 @@ enum control_sounds {
     WRONG_SOUND
 };
 
+// FOLDER 04: COLOURS
+// RED, GREEN, BLUE, YELLOW, ORANGE, PINK, BROWN, PURPLE, WHITE
+
 //------------------------------------------------------------------------
 // FINITE STATE MACHINE
 //------------------------------------------------------------------------
@@ -71,12 +74,11 @@ enum fsm_state {
 //------------------------------------------------------------------------
 // GAME
 //------------------------------------------------------------------------
-#define GAME_DELAY_CORRECTANSWER            5000
-#define GAME_DELAY_WRONGANSWER              1000
 #define GAME_DELAY_STARTGAME                2000
 
-#define GAME_MODE1_DELAY_FINISHAUDIO        2000
-#define GAME_MODE2_DELAY_FINISHAUDIO        2000
+#define GAME_DELAY_FINISHAUDIO              2000
+#define GAME_DELAY_CORRECTANSWER            5000
+#define GAME_DELAY_WRONGANSWER              1000
 
 #define GAME_MODE3_TIMER                    10000
 #define GAME_MODE4_TIMER                    10000

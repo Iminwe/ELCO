@@ -4,16 +4,31 @@
 //------------------------------------------------------------------------
 // CLARIFICATIONS
 //------------------------------------------------------------------------
-
 // MODE1:
+// When a button is pressed, it lights up and the corresponding audio 
+// sounds
 
+// MODE2:
+// Same as Mode1 but in English
 
-// FOLDER 04: COLOURS
-    // RED_SOUND,
-    // GREEN_SOUND,
-    // BLUE_SOUND,
-    // YELLOW_SOUND
+// MODE3:
+// - A random audio sounds
+// - You have to press the button that corresponds to that audio
+// - If you press the right button --> A "RIGHT ANSWER" audio is played 
+//   and the corresponding LED lights up
+// - If you press the wrong button --> A "WRONG ANSWER" audio is played
+// - If you have not responded within the time, another random audio is 
+//   played to play again
 
+// MODE4:
+// - 4 random buttons with 4 different colours light up
+// - An audio plays with the colour to look for
+// - If you press the right button --> A "RIGHT ANSWER" audio is played 
+//   and the corresponding LED lights up
+// - If you press the wrong button --> A "WRONG ANSWER" audio is played
+// - If you have not responded within the time, another 4 buttons with 
+//   4 different colours light up and another random colour sounds to 
+//   play again
 
 //------------------------------------------------------------------------
 // LIBRARIES
