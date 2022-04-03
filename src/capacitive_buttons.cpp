@@ -14,7 +14,7 @@ Adafruit_MPR121 buttons_board1 = Adafruit_MPR121();
 Adafruit_MPR121 buttons_board2 = Adafruit_MPR121();
 
 //------------------------------------------------------------------------
-// VARIABLES
+// LOCAL VARIABLES
 //------------------------------------------------------------------------
 // Keeps track of the last pins touched
 // so we know when buttons are 'released'
@@ -28,17 +28,17 @@ void buttons_setup() {
 
     // MPR121_board1
     if (!buttons_board1.begin(MPR121_ADDRESS1)) {
-        Serial.println("MPR121_board1 not found");
+        Serial.println("MPR121_board1 not found"); // Only for DEBUG
         while (1);
     }
-    Serial.println("MPR121_board1 found!");
+    Serial.println("MPR121_board1 found!");        // Only for DEBUG
 
     // MPR121_board2
     if (!buttons_board2.begin(MPR121_ADDRESS2)) {
-        Serial.println("MPR121_board2 not found");
+        Serial.println("MPR121_board2 not found"); // Only for DEBUG
         while (1);
     }
-    Serial.println("MPR121_board2 found!");
+    Serial.println("MPR121_board2 found!");        // Only for DEBUG
 }
 
 //------------------------------------------------------------------------
@@ -54,12 +54,12 @@ void buttons_read(int *button_position) {
     for (int i=0; i<24; i++) {
         // if it *is* touched and *wasnt* touched before, alert!
         if ((currtouched & _BV(i)) && !(lasttouched & _BV(i)) ) {
-            Serial.print(i); Serial.println(" touched");
+            Serial.print(i); Serial.println(" touched"); // Only for DEBUG
             *button_position = i;
         }
         // if it *was* touched and now *isnt*, alert!
         if (!(currtouched & _BV(i)) && (lasttouched & _BV(i)) ) {
-            Serial.print(i); Serial.println(" released");
+            Serial.print(i); Serial.println(" released"); // Only for DEBUG
         }
     }
 

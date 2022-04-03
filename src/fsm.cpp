@@ -48,10 +48,10 @@ void fsm_setup() {
 	// Configure status events
     // When it enters the state, it executes the function
     // This is not necessary, it is only there for debugging
-	stateMachine.SetOnEntering(MODE1, output_MODE1);
-	stateMachine.SetOnEntering(MODE2, output_MODE2);
-	stateMachine.SetOnEntering(MODE3, output_MODE3);
-	stateMachine.SetOnEntering(MODE4, output_MODE4);
+	stateMachine.SetOnEntering(MODE1, output_MODE1); // Only for DEBUG
+	stateMachine.SetOnEntering(MODE2, output_MODE2); // Only for DEBUG
+	stateMachine.SetOnEntering(MODE3, output_MODE3); // Only for DEBUG
+	stateMachine.SetOnEntering(MODE4, output_MODE4); // Only for DEBUG
 
     //The first state shall always be MODE_1
     stateMachine.SetState(MODE1, false, true);

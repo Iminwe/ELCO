@@ -60,9 +60,9 @@ DFMiniMp3<SoftwareSerial, Mp3Notify> mp3(secondarySerial);
 //------------------------------------------------------------------------
 void dfplayer_setup() {
 
-  Serial.println("Initializing DFplayer...");
-  mp3.begin();                               // Initialize DFplayer object
-  mp3.setVolume(VOLUME);                     // Set volume (from 0 to 30)
+  Serial.println("Initializing DFplayer...");  // Only for DEBUG
+  mp3.begin();                                 // Initialize DFplayer object
+  mp3.setVolume(VOLUME);                       // Set volume (from 0 to 30)
 
 }
 

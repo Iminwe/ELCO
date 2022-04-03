@@ -16,8 +16,6 @@
 //------------------------------------------------------------------------
 // define global var ONCE
 int button_position = -1;
-int audio_folder = 0;
-int audio_position = -1;
 int button_mode = 0;
 int currentState = -1;
 
@@ -28,11 +26,13 @@ void setup() {
 
     Serial.begin(9600);               // Serial initialization
 
+    // Devices
     buttons_setup();                  // Buttons initialization
     leds_setup();                     // Leds initialization
     dfplayer_setup();                 // DFplayer initialization
     
-    fsm_setup();	                    // FSM initialization
+    // FSM
+    fsm_setup();	                  // FSM initialization
 
 }
 
@@ -54,7 +54,7 @@ void loop() {
     fsm_update(&currentState);
     game_play(&currentState);
 
-    delay(1000); // delay to debug, TO DELETE WHEN CODE IS RUNNING!!
+    //delay(1000); // Only to DEBUG
 
     // Switch off the LEDs
     button_position = -1; 

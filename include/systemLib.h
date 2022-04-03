@@ -24,12 +24,12 @@
 #define LEDS_NUMPIXELS          19
 
 // Time (in milliseconds) to pause between pixels
-#define LEDS_DELAY              500
+//#define LEDS_DELAY              500
 
-// RGB brightness values: from 0,0,0 up to 255,255,255
-#define R_BRIGHTNESS            0
+// Default RGB brightness values: from 0,0,0 up to 255,255,255
+#define R_BRIGHTNESS            150
 #define G_BRIGHTNESS            150
-#define B_BRIGHTNESS            0
+#define B_BRIGHTNESS            150
 
 //------------------------------------------------------------------------
 // DFplayer
@@ -46,12 +46,14 @@ enum sd_folder {
 	FOLDER_MODE2,
 	FOLDER_MODE3,
 	FOLDER_MODE4,
-    FOLDER_SOUNDS};
+    FOLDER_CONTROL
+};
 
-enum control_sounds{
+enum control_sounds {
     NO_SOUND,
     RIGHT_SOUND,
-    WRONG_SOUND};
+    WRONG_SOUND
+};
 
 //------------------------------------------------------------------------
 // FINITE STATE MACHINE
@@ -69,18 +71,33 @@ enum fsm_state {
 //------------------------------------------------------------------------
 // GAME
 //------------------------------------------------------------------------
-#define GAME_MODE3_TIMER        10000
+#define GAME_DELAY_CORRECTANSWER            5000
+#define GAME_DELAY_WRONGANSWER              1000
+#define GAME_DELAY_STARTGAME                2000
+
+#define GAME_MODE1_DELAY_FINISHAUDIO        2000
+#define GAME_MODE2_DELAY_FINISHAUDIO        2000
+
+#define GAME_MODE3_TIMER                    10000
+#define GAME_MODE4_TIMER                    10000
+
+#define COLOURS_NUMBER                      4
 
 //------------------------------------------------------------------------
 // GLOBAL VARIABLE DECLARATIONS
 //------------------------------------------------------------------------
 // Declare global var
+// Buttons
 extern int button_position;
+// Neopixel
+extern int r_color;
+extern int g_color;
+extern int b_color;
+// DFplayer
 extern int audio_folder;
 extern int audio_position;
+// FSM
 extern int button_mode;
 extern int currentState;
-
-
 
 #endif /* SYSTEMLIB_H_ */
