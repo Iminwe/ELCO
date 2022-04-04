@@ -14,7 +14,7 @@ Adafruit_MPR121 buttons_board1 = Adafruit_MPR121();
 Adafruit_MPR121 buttons_board2 = Adafruit_MPR121();
 
 //------------------------------------------------------------------------
-// VARIABLES
+// LOCAL VARIABLES
 //------------------------------------------------------------------------
 // Keeps track of the last pins touched
 // so we know when buttons are 'released'
@@ -26,26 +26,26 @@ uint32_t currtouched = 0;
 //------------------------------------------------------------------------
 void buttons_setup() {
 
-    // MPR121_board1 is tied to GND (default address)
-    if (!buttons_board1.begin(0x5A)) {
-        Serial.println("MPR121_board1 not found");
+    // MPR121_board1
+    if (!buttons_board1.begin(MPR121_ADDRESS1)) {
+        Serial.println("MPR121_board1 not found"); // Only for DEBUG
         while (1);
     }
-    Serial.println("MPR121_board1 found!");
+    Serial.println("MPR121_board1 found!");        // Only for DEBUG
 
-    // MPR121_board2 is tied to SDA
-    if (!buttons_board2.begin(0x5C)) {
-        Serial.println("MPR121_board2 not found");
+    // MPR121_board2
+    if (!buttons_board2.begin(MPR121_ADDRESS2)) {
+        Serial.println("MPR121_board2 not found"); // Only for DEBUG
         while (1);
     }
-    Serial.println("MPR121_board2 found!");
+    Serial.println("MPR121_board2 found!");        // Only for DEBUG
 }
 
 //------------------------------------------------------------------------
 // ACTION FUNCTIONS 
 //------------------------------------------------------------------------
 void buttons_read(int *button_position) {
-    
+
     currtouched = buttons_board2.touched() & 0x0FFF;   // Get the currently touched pads
     currtouched <<= 12;                                // Move buttons_board2 data left by 12 bits
     currtouched |= buttons_board1.touched() & 0x0FFF;  // Put the buttons_board1 data in the lower 12 bits
@@ -54,16 +54,16 @@ void buttons_read(int *button_position) {
     for (int i=0; i<24; i++) {
         // if it *is* touched and *wasnt* touched before, alert!
         if ((currtouched & _BV(i)) && !(lasttouched & _BV(i)) ) {
-            Serial.print(i); Serial.println(" touched");
+            Serial.print(i); Serial.println(" touched"); // Only for DEBUG
             *button_position = i;
         }
         // if it *was* touched and now *isnt*, alert!
         if (!(currtouched & _BV(i)) && (lasttouched & _BV(i)) ) {
-            Serial.print(i); Serial.println(" released");
+            Serial.print(i); Serial.println(" released"); // Only for DEBUG
         }
     }
 
     // reset our state
     lasttouched = currtouched;
-
+    
 }

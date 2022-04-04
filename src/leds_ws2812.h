@@ -22,6 +22,7 @@ void leds_setup();
 //------------------------------------------------------------------------
 // ACTION FUNCTIONS 
 //------------------------------------------------------------------------
-void leds_write(int *button_position);
+void leds_write(int *button_position, int *r_color, int *g_color, int *b_color);
+void leds_clear();
 
 #endif /* _LEDS_WS2812_H_ */

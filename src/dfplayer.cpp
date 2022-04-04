@@ -60,18 +60,18 @@ DFMiniMp3<SoftwareSerial, Mp3Notify> mp3(secondarySerial);
 //------------------------------------------------------------------------
 void dfplayer_setup() {
 
-  Serial.println("initializing...");
-  mp3.begin();                               // Initialize DFplayer object
-  mp3.setVolume(10);                         // Set volume (from 0 to 30)
-  Serial.println("starting...");
+  Serial.println("Initializing DFplayer...");  // Only for DEBUG
+  mp3.begin();                                 // Initialize DFplayer object
+  mp3.setVolume(VOLUME);                       // Set volume (from 0 to 30)
 
 }
 
 //------------------------------------------------------------------------
 // ACTION FUNCTIONS 
 //------------------------------------------------------------------------
-void dfplayer_play(int *button_position) {
+void dfplayer_play(int *audio_folder, int *audio_position) {
 
-  mp3.playMp3FolderTrack (*button_position+1); // sd:/mp3/00XX.mp3 (XX=button_Position)
-
+  // sd:/audio_folder/00XX.mp3 (XX=button_Position)
+  mp3.playFolderTrack16 (*audio_folder,*audio_position);
+  
 }

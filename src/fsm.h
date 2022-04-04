@@ -1,17 +1,10 @@
-#ifndef _DFPLAYER_H_
-#define _DFPLAYER_H_
+#ifndef _FSM_H_
+#define _FMS_H_
 
 //------------------------------------------------------------------------
 // CLARIFICATIONS
 //------------------------------------------------------------------------
-// Code expects the SD card to contain the mp3 files in the path below:
-// sd:/mp3/00XX.mp3
-//
-// Examples:
-// sd:/mp3/0001.mp3
-// sd:/mp3/0002.mp3
 
-// Volume can have values from 0 to 30
 
 //------------------------------------------------------------------------
 // LIBRARIES
@@ -19,17 +12,20 @@
 #include <Arduino.h>
 #include <systemLib.h>
 
-#include <SoftwareSerial.h>
-#include <DFMiniMp3.h>
+#include "StateMachineLib.h"
 
 //------------------------------------------------------------------------
 // INITIALIZATION FUNCTIONS 
 //------------------------------------------------------------------------
-void dfplayer_setup();
+void output_MODE1();
+void output_MODE2();
+void output_MODE3();
+void output_MODE4();
+void fsm_setup();
 
 //------------------------------------------------------------------------
 // ACTION FUNCTIONS 
 //------------------------------------------------------------------------
-void dfplayer_play(int *audio_folder, int *audio_position);
+void fsm_update(int *currentState);
 
-#endif /* _DFPLAYER_H_ */
+#endif /* _FSM_H_ */
