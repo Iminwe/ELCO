@@ -18,7 +18,7 @@
 // LEDS
 //------------------------------------------------------------------------
 // Which pin on the Arduino is connected to the NeoPixels?
-#define GPIO_LEDS               15
+#define GPIO_LEDS               14
 
 // How many NeoPixels are attached to the Arduino?
 #define LEDS_NUMPIXELS          19
@@ -35,10 +35,10 @@
 // DFplayer
 //------------------------------------------------------------------------
 // Which pin on the Arduino is connected to the DFplayer?
-#define GPIO_DFPLAYER_RX        5       // Pin receiving info from DFplayer
-#define GPIO_DFPLAYER_TX        4       // Pin transmiting info to DFplayer
+#define GPIO_DFPLAYER_RX        0       // Pin receiving info from DFplayer
+#define GPIO_DFPLAYER_TX        2       // Pin transmiting info to DFplayer
 
-#define VOLUME                  10
+#define VOLUME                  3
 
 enum sd_folder {
     NO_FOLDER,
