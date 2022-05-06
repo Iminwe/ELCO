@@ -14,24 +14,28 @@ void output_MODE1() {
 	Serial.println("1   2   3   4");
 	Serial.println("X            ");
 	Serial.println();
+	dfplayer_play(&(audio_folder=FOLDER_CONTROL),&(audio_position=MODE_SOUND));
 }
 // This is not necessary, it is only there for debugging
 void output_MODE2() {
 	Serial.println("1   2   3   4");
 	Serial.println("    X        ");
 	Serial.println();
+	dfplayer_play(&(audio_folder=FOLDER_CONTROL),&(audio_position=MODE_SOUND));
 }
 // This is not necessary, it is only there for debugging
 void output_MODE3() {
 	Serial.println("1   2   3   4");
 	Serial.println("        X    ");
 	Serial.println();
+	dfplayer_play(&(audio_folder=FOLDER_CONTROL),&(audio_position=MODE_SOUND));
 }
 // This is not necessary, it is only there for debugging
 void output_MODE4() {
 	Serial.println("1   2   3   4");
 	Serial.println("            X");
 	Serial.println();
+	dfplayer_play(&(audio_folder=FOLDER_CONTROL),&(audio_position=MODE_SOUND));
 }
 
 void fsm_setup() {

@@ -38,7 +38,7 @@
 #define GPIO_DFPLAYER_RX        0       // Pin receiving info from DFplayer
 #define GPIO_DFPLAYER_TX        2       // Pin transmiting info to DFplayer
 
-#define VOLUME                  3
+#define VOLUME                  15
 
 enum sd_folder {
     NO_FOLDER,
@@ -52,7 +52,8 @@ enum sd_folder {
 enum control_sounds {
     NO_SOUND,
     RIGHT_SOUND,
-    WRONG_SOUND
+    WRONG_SOUND,
+	MODE_SOUND
 };
 
 // FOLDER 04: COLOURS

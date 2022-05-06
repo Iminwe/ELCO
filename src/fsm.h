@@ -13,6 +13,7 @@
 #include <systemLib.h>
 
 #include "StateMachineLib.h"
+#include "dfplayer.h"               // Header file to use the DFplayer
 
 //------------------------------------------------------------------------
 // INITIALIZATION FUNCTIONS 
