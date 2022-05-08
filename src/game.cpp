@@ -28,9 +28,9 @@ int random_Color;
 int random_Position;
 int leds_array   [COLOURS_NUMBER];
 //                                     Red     Green    Blue    Yellow
-int red_array    [COLOURS_NUMBER] = {  150,        0,      0,      150};
-int green_array  [COLOURS_NUMBER] = {    0,      150,      0,      150};
-int blue_array   [COLOURS_NUMBER] = {    0,        0,    150,        0};
+int red_array    [COLOURS_NUMBER] = {  255,        0,      0,      255};
+int green_array  [COLOURS_NUMBER] = {    0,      255,      0,      255};
+int blue_array   [COLOURS_NUMBER] = {    0,        0,    255,        0};
 
 //------------------------------------------------------------------------
 // ACTION FUNCTIONS 

@@ -27,9 +27,9 @@
 //#define LEDS_DELAY              500
 
 // Default RGB brightness values: from 0,0,0 up to 255,255,255
-#define R_BRIGHTNESS            150
-#define G_BRIGHTNESS            150
-#define B_BRIGHTNESS            150
+#define R_BRIGHTNESS            255
+#define G_BRIGHTNESS            255
+#define B_BRIGHTNESS            255
 
 //------------------------------------------------------------------------
 // DFplayer
@@ -38,7 +38,7 @@
 #define GPIO_DFPLAYER_RX        0       // Pin receiving info from DFplayer
 #define GPIO_DFPLAYER_TX        2       // Pin transmiting info to DFplayer
 
-#define VOLUME                  15
+#define VOLUME                  20
 
 enum sd_folder {
     NO_FOLDER,
@@ -79,10 +79,10 @@ enum fsm_state {
 
 #define GAME_DELAY_FINISHAUDIO              2000
 #define GAME_DELAY_CORRECTANSWER            5000
-#define GAME_DELAY_WRONGANSWER              1000
+#define GAME_DELAY_WRONGANSWER              2000
 
-#define GAME_MODE3_TIMER                    10000
-#define GAME_MODE4_TIMER                    10000
+#define GAME_MODE3_TIMER                    20000
+#define GAME_MODE4_TIMER                    20000
 
 #define COLOURS_NUMBER                      4
 
