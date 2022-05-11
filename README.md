@@ -1,6 +1,4 @@
-# INTRODUCCIÓN Y OBJETIVOS
-
-
+# PlayEl
 
 ## Introducción
 
